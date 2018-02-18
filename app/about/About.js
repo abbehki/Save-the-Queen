@@ -1,7 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import ACTION from '../action_constants';
-const appleImage = require('../../assets/images/apple.jpg');
 import { Link } from 'react-router-dom';
 
 import injectSheet from 'react-jss';
@@ -24,11 +23,9 @@ class About extends React.Component {
   render() {
     const {classes} = this.props;
     return (
-      <div className={classes.block}>      
-        <h5>List of Projects</h5>
-        <Link to="/dummy">dummy</Link>
-        <h5>This is an apple below.... see. nice naa?</h5>
-        
+      <div className={classes.block}> 
+      <p>Save the queen in minimum nuber of step.Try with your friends,its fun!</p>     
+        <Link to="/">GO BACK AND PLAY!!</Link>        
       </div>
     );
   }

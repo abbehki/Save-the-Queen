@@ -7,7 +7,7 @@ import createSagaMiddleware from 'redux-saga';
 import rootSaga from './root_saga';
 import reducers from './root_reducer';
 import About from './about/About';
-import Test from './test/test';
+import Maze from './mazegame/mazegame';
 import history from './history';
 
 //import Loadable from 'components/Loadable';
@@ -19,23 +19,11 @@ const store = createStore(reducers, applyMiddleware(sagaMiddleware, logger));
 
 sagaMiddleware.run(rootSaga);
 
-
-// //If the user is not logged in and try to go back to private page redirect to login
-// function isUserLoggedIn(nextState,replace){
-//   const state = store.getState();
-//   const appState = state.app;
-//   const userData = appState.auth && appState.auth.userData;
-
-//   if (!userData) {
-//     replace({ nextPathname: nextState.location.pathname }, '/');
-//   }
-// }
-
 const routes = (
     <Router history={history}>
       <Switch>
-        <Route exact path='/' component={About} />  
-        <Route exact path='/test' component={Test} />          
+        <Route exact path='/' component={Maze} />  
+        <Route exact path='/about' component={About} />          
         
       </Switch>
     </Router>
